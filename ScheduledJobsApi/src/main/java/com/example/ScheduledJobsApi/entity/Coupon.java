@@ -1,9 +1,6 @@
 package com.example.ScheduledJobsApi.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,5 +31,12 @@ public class Coupon {
     @Column(nullable = false)
     private LocalDateTime expiryDateTime;
     private boolean isActive;
+
+
+    @PrePersist
+    public void prePersist(){
+        if (id == null)
+            id = UUID.randomUUID();
+    }
 
 }
