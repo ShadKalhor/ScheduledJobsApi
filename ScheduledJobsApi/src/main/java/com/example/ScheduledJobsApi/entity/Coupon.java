@@ -1,0 +1,38 @@
+package com.example.ScheduledJobsApi.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.math.BigInteger;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.UUID;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "coupons")
+public class Coupon {
+
+    @Id
+    private UUID id;
+    @Column(nullable = false, unique = true)
+    private String code;
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigInteger discount;
+    @Column(nullable = false)
+    private LocalDateTime expiryDateTime;
+    private boolean isActive;
+
+}
