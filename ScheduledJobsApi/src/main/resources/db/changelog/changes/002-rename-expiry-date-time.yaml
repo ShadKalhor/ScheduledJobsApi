@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-rename-expiry-date-time
+      author: shad
+      changes:
+        - renameColumn:
+            tableName: coupons
+            oldColumnName: expiryDateTime
+            newColumnName: expiry_date_time
+            columnDataType: timestamp
