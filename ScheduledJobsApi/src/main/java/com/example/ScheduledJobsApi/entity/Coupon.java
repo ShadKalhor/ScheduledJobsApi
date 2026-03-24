@@ -30,7 +30,7 @@ public class Coupon {
     private BigInteger discount;
     @Column(nullable = false)
     private LocalDateTime expiryDateTime;
-    private boolean isActive;
+    private boolean active;
 
 
     @PrePersist
