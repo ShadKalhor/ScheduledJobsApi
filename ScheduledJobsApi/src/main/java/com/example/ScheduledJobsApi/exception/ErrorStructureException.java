@@ -2,7 +2,7 @@ package com.example.ScheduledJobsApi.exception;
 
 import lombok.Getter;
 
-import static com.example.BookCalalogAPI.exception.ErrorTypeToHttpStatusMapper.httpStatus;
+import static com.example.ScheduledJobsApi.exception.ErrorTypeToHttpStatusMapper.httpStatus;
 
 @Getter
 public class ErrorStructureException extends RuntimeException {
