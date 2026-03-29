@@ -34,7 +34,7 @@ public class CouponController {
     @ResponseStatus(HttpStatus.OK)
     public Page<Coupon> getAllPages(@RequestParam(defaultValue = "0") int page,
                                     @RequestParam(defaultValue = "0") int size,
-                                    @RequestParam(defaultValue = "0") String sortBy,
+                                    @RequestParam(defaultValue = "id") String sortBy,
                                     @RequestParam(defaultValue = "0") boolean ascending){
 
         Sort sort = ascending ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
